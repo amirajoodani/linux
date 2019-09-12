@@ -1,0 +1,1171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0061)https://www.server-world.info/en/note?os=CentOS_7&p=httpd&f=1 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>CentOS 7 : Apache httpd : Install : Server World</title>
+<link href="./CentOS 7 _ Apache httpd _ Install _ Server World_files/base.css" media="screen" rel="stylesheet" type="text/css">
+<link href="./CentOS 7 _ Apache httpd _ Install _ Server World_files/navi.css" media="screen" rel="stylesheet" type="text/css">
+<link href="./CentOS 7 _ Apache httpd _ Install _ Server World_files/main.css" media="screen" rel="stylesheet" type="text/css">
+<link href="./CentOS 7 _ Apache httpd _ Install _ Server World_files/position.css" media="screen" rel="stylesheet" type="text/css">
+<script src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/osd.js.download"></script><script type="text/javascript" src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/popup.js.download"></script>
+<script type="text/javascript">
+hs.graphicsDir = './command/graphics/';
+hs.outlineType = 'rounded-white';
+hs.wrapperClassName = 'draggable-header';
+</script>
+<link rel="preload" href="./CentOS 7 _ Apache httpd _ Install _ Server World_files/f.txt" as="script"><script type="text/javascript" src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/f.txt"></script><link rel="preload" href="https://pagead2.googlesyndication.com/pagead/js/r20190910/r20190131/show_ads_impl.js" as="script"><style type="text/css">.highslide img {cursor: url(./command/graphics/zoomin.cur), pointer !important;}</style></head>
+<body>
+<div id="top-menu">
+<table id="menu-table" summary="menu">
+<tbody><tr>
+<td class="menu" style="width: 13%;"><a href="https://www.server-world.info/en/">Server World</a></td>
+<td class="menu">
+<div class="top_navi">
+<ul>
+<li><a href="https://www.server-world.info/en/note?p=oslist">Other OS Configs</a>
+<ul>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=download">CentOS 7</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_6&amp;p=download">CentOS 6</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_30&amp;p=download">Fedora 30</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_29&amp;p=download">Fedora 29</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Debian_10&amp;p=download">Debian 10</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Debian_9&amp;p=download">Debian 9</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Debian_8&amp;p=download">Debian 8</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Ubuntu_19.04&amp;p=download">Ubuntu 19.04</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Ubuntu_18.04&amp;p=download">Ubuntu 18.04 LTS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Ubuntu_16.04&amp;p=download">Ubuntu 16.04 LTS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Windows_Server_2019&amp;p=download">Windows Server 2019</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Windows_Server_2016&amp;p=download">Windows Server 2016</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Windows_Server_2012&amp;p=download">Windows Server 2012 R2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=SUSE_Linux_Enterprise_15&amp;p=download">SUSE Linux Enterprise 15</a></li>
+<li><a href="https://www.server-world.info/en/note?os=SUSE_Linux_Enterprise_12&amp;p=download">SUSE Linux Enterprise 12</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Other">Other Tips</a></li>
+</ul>
+<ul style="position: absolute; margin-left: 18em; z-index: 90;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_5&amp;p=make_media">CentOS 5</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_28&amp;p=download">Fedora 28</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_27&amp;p=download">Fedora 27</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_26&amp;p=download">Fedora 26</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_25&amp;p=download">Fedora 25</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_24&amp;p=download">Fedora 24</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_23&amp;p=download">Fedora 23</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_22&amp;p=download">Fedora 22</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_21&amp;p=download">Fedora 21</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_20&amp;p=download">Fedora 20</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_19&amp;p=download">Fedora 19</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_18&amp;p=download">Fedora 18</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_17&amp;p=download">Fedora 17</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_16&amp;p=download">Fedora 16</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_15&amp;p=download">Fedora 15</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_14&amp;p=download" style="border-bottom: #aaaaaa 0px solid;">Fedora 14</a></li>
+</ul>
+<ul style="position: absolute; margin-left: 36em; z-index: 80;">
+<li><a href="https://www.server-world.info/en/note?os=Fedora_13&amp;p=make_media">Fedora 13</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_12&amp;p=make_media">Fedora 12</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_11&amp;p=make_media">Fedora 11</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Fedora_10&amp;p=make_media">Fedora 10</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Debian_7.0&amp;p=download">Debian 7</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Debian_6.0&amp;p=download">Debian 6</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Ubuntu_17.04&amp;p=download">Ubuntu 17.04</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Ubuntu_15.04&amp;p=download">Ubuntu 15.04</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Ubuntu_14.04&amp;p=download">Ubuntu 14.04 LTS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Ubuntu_13.04&amp;p=download">Ubuntu 13.04</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Ubuntu_12.04&amp;p=download">Ubuntu 12.04 LTS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Ubuntu_11.04&amp;p=download">Ubuntu 11.04</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Ubuntu_10.04&amp;p=make_media">Ubuntu 10.04 LTS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=Scientific_Linux_6&amp;p=download">Scientific Linux 6</a></li>
+<li><a href="https://www.server-world.info/en/note?os=SUSE_Linux_Enterprise_Server_11&amp;p=make_media" style="border-bottom: #aaaaaa 0px solid;">SUSE Linux Enterprise 11</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+<td class="menu"><a href="https://www.server-world.info/en/note?p=policy">Privacy Policy</a></td>
+<td class="menu"><a href="https://www.server-world.info/en/note?p=new">Histories</a></td>
+<td class="menu"><a href="https://www.server-world.info/en/note?p=command">Commands Help</a></td>
+<td class="menu"><a href="https://www.server-world.info/en/note?p=send">Links/Contact</a></td>
+<td class="menu" style="width: 13%;">
+<div class="count">23585 / 74955861</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div id="left">
+<div class="os">CentOS 7</div>
+<div class="navi">
+<ul>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=download">Install / Initial Config</a>
+<ul style="position: absolute; margin-top: -1.8em;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=download">&nbsp; Install CentOS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=download">(01) Download CentOS 7</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=install">(02) Install CentOS 7</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=initial_conf&amp;f=1">&nbsp; Initial Settings</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=initial_conf&amp;f=1">(01) Add an User</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=initial_conf&amp;f=2">(02) FireWall &amp; SELinux</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=initial_conf&amp;f=3">(03) Configure Networking</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=initial_conf&amp;f=4">(04) Configure Services</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=initial_conf&amp;f=5">(05) Update System</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=initial_conf&amp;f=6">(06) Add Repositories</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=initial_conf&amp;f=7">(07) Configure vim</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=initial_conf&amp;f=8">(08) Configure sudo</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=initial_conf&amp;f=9">(09) Cron's Setting</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ntp&amp;f=1">NTP / SSH Server</a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ntp&amp;f=1">&nbsp; NTP Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ntp&amp;f=1">(01) Configure NTP Server (NTPd)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ntp&amp;f=3">(02) Configure NTP Server (Chrony)</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ntp&amp;f=2">(03) Configure NTP Client</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ssh&amp;f=1">&nbsp; SSH Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ssh&amp;f=1">(01) Password Authentication</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ssh&amp;f=2">(02) SSH File Transfer(CentOS)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ssh&amp;f=3">(03) SSH File Transfer(Windows)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ssh&amp;f=4">(04) SSH Keys Authentication</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ssh&amp;f=5">(05) SFTP only + Chroot</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ssh&amp;f=6">(06) SSH Port Forwarding</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ssh&amp;f=10">(07) SSH X11 Forwarding</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ssh&amp;f=7">(08) Use SSHPass</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ssh&amp;f=8">(09) Use SSH-Agent</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ssh&amp;f=9">(10) Use Parallel SSH</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dns&amp;f=1">DNS / DHCP Server</a>
+<ul style="position: absolute; margin-top: -3.7em;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dnsmasq&amp;f=1">&nbsp; DNS/DHCP Server (Dnsmasq)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dnsmasq&amp;f=1">(01) Install Dnsmasq</a></li>
+<li style="border-bottom: #696969 1px solid"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dnsmasq&amp;f=2">(02) Configure DHCP Server</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dns&amp;f=1">&nbsp; DNS Server (BIND)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dns&amp;f=1">(01) Install BIND</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dns&amp;f=2">(02) Set Zones</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dns&amp;f=3">(03) Start BIND</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dns&amp;f=4">(04) Enable chroot</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dns&amp;f=5">(05) Set CNAME</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dns&amp;f=6">(06) Configure Slave DNS Server</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dhcp&amp;f=1">&nbsp; DHCP Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dhcp&amp;f=1">(01) Configure DHCP Server</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dhcp&amp;f=2">(02) Configure DHCP Client</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nfs&amp;f=1">Storage Server</a>
+<ul style="position: absolute; margin-top: -5.55em;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nfs&amp;f=1">&nbsp; NFS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nfs&amp;f=1">(01) Configure NFS Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nfs&amp;f=2">(02) Conf NFS Client(CentOS)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nfs&amp;f=5">(03) NFS 4 ACL Tool</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nfs&amp;f=3">(04) Conf NFS Client(Win Server)</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nfs&amp;f=4">(05) Conf NFS Client(Win Client)</a></li>
+<li style="background: #e6e6fa; border-top: #696969 1px solid;border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=iscsi&amp;f=1">&nbsp; iSCSI</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=iscsi&amp;f=1">(01) Configure iSCSI Target</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=iscsi&amp;f=4">(02) Configure iSCSI Target (tgt)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=iscsi&amp;f=2">(03) Conf iSCSI Initiator(CentOS)</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=iscsi&amp;f=3">(04) Conf iSCSI Initiator(Win)</a></li>
+<li style="background: #e6e6fa; border-top: #696969 1px solid;border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ceph14&amp;f=1">&nbsp; Ceph Nautilus</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ceph14&amp;f=1">(01) Configure Ceph Cluster</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ceph14&amp;f=2">(02) Use as Block Device</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ceph14&amp;f=3">(03) Use as File System</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ceph14&amp;f=5">(04) Enable Object Gateway</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ceph14&amp;f=4">(05) Enable Dashboard</a></li>
+<li style="background: #e6e6fa; border-top: #696969 1px solid;border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=drbd9&amp;f=1">&nbsp; DRBD 9</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=drbd9&amp;f=1">(01) Install DRBD</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=drbd9&amp;f=2">(02) Configure DRBD</a></li>
+</ul>
+<ul style="position: absolute; margin-top: -5.55em; margin-left: 22.8em; border-left: #696969 1px dashed; z-index:70;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=glusterfs&amp;f=1">&nbsp; GlusterFS 4</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=glusterfs5&amp;f=1">&nbsp; GlusterFS 5</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=glusterfs6&amp;f=1">&nbsp; GlusterFS 6</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=glusterfs6&amp;f=1">(01) Install GlusterFS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=glusterfs6&amp;f=2">(02) Distributed Setting</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=glusterfs6&amp;f=4">(03) Replication Setting</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=glusterfs6&amp;f=5">(04) Distributed + Replication</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=glusterfs6&amp;f=6">(05) Dispersed Setting</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=glusterfs6&amp;f=3">(06) GlusterFS Clients' Setting</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=glusterfs6&amp;f=7">(07) GlusterFS + NFS-Ganesha</a></li>
+<li style="background: #e6e6fa; border-top: #696969 1px solid;border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nextcloud&amp;f=1">&nbsp; NextCloud</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nextcloud&amp;f=1">(01) Install NextCloud</a></li>
+<li style="background: #e6e6fa; border-top: #696969 1px solid;border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=owncloud&amp;f=1">&nbsp; ownCloud</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=owncloud&amp;f=1">(01) Install ownCloud</a></li>
+<li style="background: #e6e6fa; border-top: #696969 1px solid;border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ceph&amp;f=1">&nbsp; Ceph Jewel</a></li>
+<li style="background: #e6e6fa; border-top: #696969 1px solid;border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ceph12&amp;f=1">&nbsp; Ceph Luminous</a></li>
+<li style="background: #e6e6fa; border-top: #696969 1px solid;border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=drbd&amp;f=1">&nbsp; DRBD 8</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=1">Virtualization</a>
+<ul style="position: absolute; margin-top: -7.4em; z-index:60;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=1">&nbsp; KVM</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=1">(01) Install KVM</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=2">(02) Create a Virtual Machine#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=3">(03) Create a Virtual Machine#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=4">(04) Basic Operations</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=9">(05) Virtual Management Tools</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=8">(06) Live Migration</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=13">(07) Storage Migration</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=5">(08) SPICE Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=6">(09) SPICE Client</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=7">(10) Nested KVM</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=10">(11) GPU Passthrough</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=11">(12) UEFI Boot</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kvm&amp;f=12">(13) VMWare ESXi on KVM</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ovirt&amp;f=1">&nbsp; oVirt</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ovirt&amp;f=1">(01) Configure Administration Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ovirt&amp;f=2">(02) Add oVirt Compute Nodes</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ovirt&amp;f=3">(03) Add Data Domains</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ovirt&amp;f=4">(04) Add ISO Domains</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ovirt&amp;f=5">(05) Create Virtual Machines</a></li>
+</ul>
+<ul style="position: absolute; margin-top: -7.4em; margin-left: 22.8em; border-left: #696969 1px dashed; z-index:70;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=xen&amp;f=1">&nbsp; Xen</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=xen&amp;f=1">(01) Install Xen</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=xen&amp;f=2">(02) Create a Virtual Machine</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=vbox&amp;f=1">&nbsp; VirtualBox</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=vbox&amp;f=1">(01) Install VirtualBox</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=vbox&amp;f=2">(02) Create a Virtual Machine#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=vbox&amp;f=3">(03) Install GuestAdditions</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=vbox&amp;f=4">(04) Create a Virtual Machine#2</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=vmware_player&amp;f=1">&nbsp; VMware Player</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=vmware_player&amp;f=1">(01) Install VMware Player</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=vmware_player&amp;f=2">(02) Create a Virtual Machine</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=vmware_player&amp;f=3">(03) Nested Virtualization</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=1">Cloud Compute</a>
+<ul style="position: absolute; margin-top: -9.2em; border-right: #696969 1px dashed; z-index:70;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=1">&nbsp; OpenStack Stein</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=1">(01) Stein Overview</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=2">(02) Pre-Requirements</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=3">(03) Configure Keystone#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=4">(04) Configure Keystone#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=5">(05) Configure Glance</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=6">(06) Add VM Images</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=7">(07) Configure Nova#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=8">(08) Configure Nova#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=9">(09) Configure Nova#3</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=10">(10) Configure Neutron#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=11">(11) Configure Neutron#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=12">(12) Configure Networking</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=13">(13) Add new Users</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=14">(14) Run Instances</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein&amp;f=15">(15) Configure Horizon</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=1">(16) Add Compute Nodes</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=2">(17) Configure Neutron#3</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=3">(18) Configure Neutron#4</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=4">(19) Configure Neutron#5</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=5">(20) Neutron Network (FLAT)</a></li>
+</ul>
+<ul style="position: absolute; margin-top: -9.2em; margin-left: 22.8em; border-right: #696969 1px dashed; z-index:60;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid; width: 250px; line-height: 19px;">&nbsp;</li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=6">(21) Neutron Network (VXLAN)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=7">(22) Neutron LBaaS V2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=8">(23) Configure Cinder#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=9">(24) Configure Cinder#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=10">(25) Cinder Storage (LVM)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=11">(26) Cinder Storage (NFS)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=12">(27) Cinder Storage (Multi-Back)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=13">(28) Configure Cinder Backup</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=14">(29) Configure Swift#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein2&amp;f=15">(30) Configure Swift#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=1">(31) Configure Swift#3</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=2">(32) How to use Swift</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=3">(33) Configure Manila#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=4">(34) Configure Manila#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=5">(35) How to use Manila#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=6">(36) How to use Manila#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=7">(37) Configure Heat#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=8">(38) Configure Heat#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=9">(39) How to use Heat</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=10">(40) Configure Barbican</a></li>
+</ul>
+<ul style="position: absolute; margin-top: -9.2em; margin-left: 45.6em; z-index:55;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid; width: 250px; line-height: 19px;">&nbsp;</li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=11">(41) How to use Barbican</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=12">(42) Configure Designate#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=13">(43) Configure Designate#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=14">(44) How to use Designate</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein3&amp;f=15">(45) OpenStack Rally</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein4&amp;f=1">(46) Configure Gnocchi</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein4&amp;f=2">(47) Configure Ceilometer#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein4&amp;f=3">(48) Configure Ceilometer#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein4&amp;f=4">(49) How to use Ceilometer(Nova)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein4&amp;f=5">(50) How to use Ceilometer(Glance)</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_stein4&amp;f=6">(51) How to use Ceilometer(Cinder)</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_rocky&amp;f=1">&nbsp; OpenStack Rocky</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_queens&amp;f=1">&nbsp; OpenStack Queens</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_pike&amp;f=1">&nbsp; OpenStack Pike</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_ocata&amp;f=1">&nbsp; OpenStack Ocata</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_newton&amp;f=1">&nbsp; OpenStack Newton</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_mitaka&amp;f=1">&nbsp; OpenStack Mitaka</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_liberty&amp;f=1">&nbsp; OpenStack Liberty</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_kilo&amp;f=1">&nbsp; OpenStack Kilo</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_juno&amp;f=1">&nbsp; OpenStack Juno</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openstack_icehouse&amp;f=1">&nbsp; OpenStack Icehouse</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=docker&amp;f=1">Container Platform</a>
+<ul style="position: absolute; margin-top: -11.0em; z-index:70;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=docker&amp;f=1">&nbsp; Docker</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=docker&amp;f=1">(01) Install Docker</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=docker&amp;f=2">(02) Add Images</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=docker&amp;f=3">(03) Access to Container</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=docker&amp;f=4">(04) Use Dockerfile#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=docker&amp;f=5">(05) Use Dockerfile#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=docker&amp;f=6">(06) Use Docker-Registry</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=docker&amp;f=7">(07) Use Docker-Registry(SSL)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=docker&amp;f=10">(08) Use Docker-Registry(Auth)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=docker&amp;f=8">(09) Use Persistent Storage</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=docker&amp;f=11">(10) Use Docker Compose</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=docker&amp;f=9">(11) Docker Swarm Cluster</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kubernetes&amp;f=1">&nbsp; Kubernetes</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kubernetes&amp;f=1">(01) Minikube : Install</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kubernetes&amp;f=2">(02) Minikube : Deploy Pods</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kubernetes&amp;f=3">(03) Kubeadm : Install</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kubernetes&amp;f=4">(04) Kubeadm : Conf Master Node</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kubernetes&amp;f=5">(05) Kubeadm : Conf Worker Node</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kubernetes&amp;f=6">(06) Use Persistent Storage</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=kubernetes&amp;f=7">(07) Use Private Registry</a></li>
+</ul>
+<ul style="position: absolute; margin-top: -11.0em; margin-left: 22.8em; border-left: #696969 1px dashed; z-index:75;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=buildah&amp;f=1">&nbsp; Buildah</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=buildah&amp;f=1">(01) Install Buildah</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=buildah&amp;f=2">(02) Create from Scratch image</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=podman&amp;f=1">&nbsp; Podman</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=podman&amp;f=1">(01) Install Podman</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openshift311&amp;f=1">&nbsp; OpenShift Origin(OKD) 3.11</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openshift311&amp;f=1">(01) Install OpenShift Origin</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openshift311&amp;f=2">(02) Add new Users</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openshift311&amp;f=3">(03) Deploy Applications</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openshift311&amp;f=4">(04) Add Nodes to a Cluster</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openshift311&amp;f=5">(05) Use Persistent Storage</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openshift311&amp;f=6">(06) Deploy Registry</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openshift311&amp;f=7">(07) Deploy Router</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openshift311&amp;f=8">(08) External Access to Cluster</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openshift311&amp;f=9">(09) Openstack Keystone Auth</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openshift310&amp;f=1">&nbsp; OpenShift Origin(OKD) 3.10</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openshift37&amp;f=1">&nbsp; OpenShift Origin 3.7</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openshift&amp;f=1">&nbsp; OpenShift Origin 3.6</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ipa&amp;f=1">Directory Server</a>
+<ul style="position: absolute; margin-top: -12.8em;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ipa&amp;f=1">&nbsp; FreeIPA</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ipa&amp;f=1">(01) Configure FreeIPA Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ipa&amp;f=2">(02) Add User Accounts</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ipa&amp;f=3">(03) Configure FreeIPA Client</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ipa&amp;f=4">(04) Basic Operation</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ipa&amp;f=5">(05) Use Web GUI</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ipa&amp;f=6">(06) FreeIPA Replication</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ipa&amp;f=8">(07) Logon to Windows</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ipa&amp;f=7">(08) FreeIPA trust Active Directory</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openldap&amp;f=1">&nbsp; OpenLDAP</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openldap&amp;f=1">(01) Configure LDAP Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openldap&amp;f=2">(02) Add User Accounts</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openldap&amp;f=3">(03) Configure LDAP Client</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openldap&amp;f=8">(04) Configure LDAP Client(AD)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openldap&amp;f=4">(05) LDAP over SSL/TLS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openldap&amp;f=5">(06) LDAP Replication</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openldap&amp;f=6">(07) Multi-Master Replication</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openldap&amp;f=7">(08) Install phpLDAPadmin</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nis&amp;f=1">&nbsp; NIS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nis&amp;f=1">(01) Configure NIS Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nis&amp;f=2">(02) Configure NIS Client</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nis&amp;f=3">(03) Configure NIS Slave</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=1">WEB Server</a>
+<ul style="position: absolute; margin-top: -14.6em;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=1">&nbsp; Apache httpd</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=1">(01) Install Apache httpd</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=2">(02) Use Perl Scripts</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=3">(03) Use PHP Scripts</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=4">(04) Use Ruby Scripts</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=17">(05) Use Python Scripts</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=5">(06) Enable Userdir</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=6">(07) Virtual Hostings</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=7">(08) SSL/TLS Settings</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=8">(09) Enable Basic Auth</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=10">(10) Basic Auth+PAM</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=11">(11) Basic Auth+LDAP</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=9">(12) Enable Kerberos Auth</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=12">(13) Use WebDAV</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=18">(14) Perl + mod_perl</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=19">(15) PHP + PHP-FPM</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=20">(16) Python + mod_wsgi</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=21">(17) WebMail : SquirrelMail</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=13">(18) WebMail : RoundCube</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=14">(19) WebMail : RainLoop</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=15">(20) Log Analyzer : AWstats</a></li>
+</ul>
+<ul style="position: absolute; margin-top: -14.6em; margin-left: 22.8em; border-left: #696969 1px dashed; z-index:70;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid; width: 250px; line-height: 19px;">&nbsp;</li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=16">(21) Log Analyzer : Piwik</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd2&amp;f=6">(22) Blog System : WordPress</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd2&amp;f=7">(23) Wiki System : MediaWiki</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd2&amp;f=1">(24) Use mod_proxy#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd2&amp;f=2">(25) Use mod_proxy#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd2&amp;f=5">(26) Use mod_proxy_wstunnel</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd2&amp;f=3">(27) Use mod_ratelimit</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd2&amp;f=9">(28) Use mod_limitipconn</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd2&amp;f=4">(29) Use mod_evasive</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd2&amp;f=8">(30) Use mod_security</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nginx&amp;f=1">&nbsp; Nginx</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nginx&amp;f=1">(01) Install Nginx</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nginx&amp;f=2">(02) Virtual Hostings</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nginx&amp;f=3">(03) Enable Userdir</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nginx&amp;f=4">(04) SSL/TLS Settings</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nginx&amp;f=5">(05) Enable Basic Auth</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nginx&amp;f=6">(06) Reverse Proxy Settings#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nginx&amp;f=7">(07) Reverse Proxy Settings#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nginx&amp;f=8">(08) Reverse Proxy Settings#3</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nginx&amp;f=9">(09) Nginx + PHP-FPM</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mariadb&amp;f=1">Database</a>
+<ul style="position: absolute; margin-top: -16.45em; border-right: #696969 1px dashed; z-index:70;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mariadb&amp;f=1">&nbsp; MariaDB 5.5</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mariadb101&amp;f=1">&nbsp; MariaDB 10.1</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mariadb102&amp;f=1">&nbsp; MariaDB 10.2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mariadb102&amp;f=1">(01) Install MariaDB 10.2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mariadb102&amp;f=2">(02) Install phpMyAdmin</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mariadb102&amp;f=3">(03) MariaDB over SSL/TLS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mariadb102&amp;f=4">(04) MariaDB Replication</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mariadb102&amp;f=5">(05) MariaDB Galera Cluster</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=1">&nbsp; SQL Server 2017</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=1">(01) Install SQL Server 2017</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=2">(02) Connect from Win Client</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=3">(03) T-SQL Basic Operation</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=4">(04) bcp Utility</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=5">(05) SQL Server Agent</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=6">(06) Integration Services</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=7">(07) Full-Text Search</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=8">(08) Windows Authentication</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=9">(09) Failover Cluster Instance</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=10">(10) Read Scale-out Replica</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=11">(11) Always On Availability Group</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=12">(12) Use SQL Server from Python</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=13">(13) Use SQL Server from PHP</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=14">(14) Use SQL Server from Node.js</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mssql2017&amp;f=15">(15) Use SQL Server from C#</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mysql56&amp;f=1">&nbsp; MySQL 5.6</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mysql57&amp;f=1">&nbsp; MySQL 5.7</a></li>
+</ul>
+<ul style="position: absolute; margin-top: -16.45em; margin-left: 22.8em; z-index:60;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=postgresql&amp;f=1">&nbsp; PostgreSQL 9.2</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=postgresql95&amp;f=1">&nbsp; PostgreSQL 9.5</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=postgresql96&amp;f=1">&nbsp; PostgreSQL 9.6</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=postgresql96&amp;f=1">(01) Install PostgreSQL 9.6</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=postgresql96&amp;f=2">(02) Install phpPgAdmin</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=postgresql96&amp;f=3">(03) PostgreSQL over SSL/TLS</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=postgresql96&amp;f=4">(04) PostgreSQL Replication</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=redis&amp;f=1">&nbsp; Redis</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=redis&amp;f=1">(01) Install Redis</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=redis&amp;f=2">(02) Basic Usage#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=redis&amp;f=3">(03) Basic Usage#2 (Keys)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=redis&amp;f=4">(04) Basic Usage#3 (Lists)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=redis&amp;f=5">(05) Basic Usage#4 (Hashes)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=redis&amp;f=6">(06) Basic Usage#5 (Sets)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=redis&amp;f=8">(07) Use Redis from Python</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=redis&amp;f=9">(08) Use Redis from PHP</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=redis&amp;f=10">(09) Use Redis from Node.js</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=redis&amp;f=7">(10) Redis Replication</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=redis&amp;f=11">(11) Redis Sentinel</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=redis&amp;f=12">(12) Redis Benchmark</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=oracle12c&amp;f=1">&nbsp; Oracle Database 12c Release 2</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=oracle18c&amp;f=1">&nbsp; Oracle Database 18c</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=oracle18c&amp;f=1">(01) Pre-Requirements</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=oracle18c&amp;f=2">(02) Install Oracle 18c</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=oracle18c&amp;f=3">(03) Add Oracle Net Listener</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=oracle18c&amp;f=4">(04) Create Database</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=oracle18c&amp;f=5">(05) Create Systemd file</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=oracle18c&amp;f=6">(06) Install from RPM Package</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=samba&amp;f=1">FTP / Samba / MAIL</a>
+<ul style="position: absolute; margin-top: -18.3em;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ftp&amp;f=1">&nbsp; FTP Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ftp&amp;f=1">(01) Install Vsftpd</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ftp&amp;f=5">(02) Install ProFTPD</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ftp&amp;f=7">(03) Install Pure-FTPd</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ftp&amp;f=2">(04) FTP Client : CentOS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ftp&amp;f=3">(05) FTP Client : Windows</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ftp&amp;f=4">(06) Vsftpd over SSL/TLS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ftp&amp;f=6">(07) ProFTPD over SSL/TLS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ftp&amp;f=8">(08) Pure-FTPd over SSL/TLS</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ftp&amp;f=9">(09) Pure-FTPd + Clamav</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=samba&amp;f=1">&nbsp; Samba Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=samba&amp;f=1">(01) Fully accessed shared Folder</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=samba&amp;f=2">(02) Limited shared Folder</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=samba&amp;f=3">(03) Samba Winbind</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=samba&amp;f=4">(04) Samba AD DC : Install</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=samba&amp;f=5">(05) Samba AD DC : User Manage</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=samba&amp;f=6">(06) Samba AD DC : Join Domain</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=samba&amp;f=7">(07) Samba AD DC : Add Existing AD</a></li>
+</ul>
+<ul style="position: absolute; margin-top: -5.55em; margin-left: 22.8em; border-left: #696969 1px dashed; z-index:70;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mail&amp;f=1">&nbsp; MAIL Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mail&amp;f=1">(01) Install Postfix</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mail&amp;f=2">(02) Install Dovecot</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mail&amp;f=9">(03) Add Mail Accounts#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mail&amp;f=3">(04) Email Client's Setting</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mail&amp;f=4">(05) SSL/TLS Settings</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mail&amp;f=5">(06) Virtual domain</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mail&amp;f=10">(07) Add Mail Accounts#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mail&amp;f=6">(08) Postfix + Clamav + Amavisd</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mail&amp;f=7">(09) Mail Log Analyze : pflogsumm</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mail&amp;f=8">(10) Mail Log Analyze : Awstats</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=haproxy&amp;f=1">Proxy / Load Balancer</a>
+<ul style="position: absolute; margin-top: -12.8em;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pound&amp;f=1">&nbsp; Pound</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pound&amp;f=1">(01) HTTP Load Balancing</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pound&amp;f=2">(02) SSL Settings</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pound&amp;f=3">(03) URL Redirect</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=lvs&amp;f=1">&nbsp; LVS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=lvs&amp;f=1">(01) Install LVS</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=lvs&amp;f=2">(02) LVS + Keepalived</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=squid&amp;f=1">&nbsp; Squid</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=squid&amp;f=1">(01) Install Squid</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=squid&amp;f=2">(02) Configure Proxy Client</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=squid&amp;f=3">(03) Use Basic Auth</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=squid&amp;f=4">(04) Reverse Proxy Settings</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=squid&amp;f=5">(05) Squid + SquidClamav</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=squid&amp;f=6">(06) Squid + SquidGuard</a></li>
+</ul>
+<ul style="position: absolute; margin-top: -7.35em; margin-left: 22.8em; border-left: #696969 1px dashed; z-index:70;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pen&amp;f=1">&nbsp; Pen</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pen&amp;f=1">(01) HTTP Load Balancing</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pen&amp;f=2">(02) SSL Settings</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pen&amp;f=3">(03) Refer to the Statics</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pen&amp;f=4">(04) MariaDB Load Balancing</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=haproxy&amp;f=1">&nbsp; HAProxy</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=haproxy&amp;f=1">(01) HTTP Load Balancing</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=haproxy&amp;f=2">(02) SSL Settings</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=haproxy&amp;f=3">(03) Refer to the Statistics#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=haproxy&amp;f=4">(04) Refer to the Statistics#2</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=haproxy&amp;f=5">(05) Load Balancing on Layer4</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sysstat&amp;f=1">Monitoring</a>
+<ul style="position: absolute; margin-top: -14.6em;">
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=monitorix&amp;f=1">&nbsp; Monitorix</a>
+<ul>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=monitorix&amp;f=1">(01) Install Monitorix</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=osquery&amp;f=1">&nbsp; OSQuery</a>
+<ul>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=osquery&amp;f=1">(01) Install OSQuery</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=osquery&amp;f=2">(02) Scheduled Monitoring</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mrtg&amp;f=1">&nbsp; MRTG</a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mrtg&amp;f=1">(01) Install MRTG</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mrtg&amp;f=2">(02) Monitor CPU Load Average</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mrtg&amp;f=3">(03) Monitor Memory Usage</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mrtg&amp;f=4">(04) Monitor Disk Usage</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=mrtg&amp;f=5">(05) Monitor httpd Processes</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cacti&amp;f=1">&nbsp; Cacti</a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cacti&amp;f=1">(01) Install Cacti</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cacti&amp;f=2">(02) Setup Cacti</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cacti&amp;f=3">(03) Basic Monitoring Settings</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cacti&amp;f=4">(04) Email Notification Settings</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cacti&amp;f=5">(05) Enable Threshold</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cacti&amp;f=6">(06) Set Threshold</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cacti&amp;f=7">(07) Add Monitoring Host</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=munin&amp;f=1">&nbsp; Munin</a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=munin&amp;f=1">(01) Install Munin</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=munin&amp;f=2">(02) Email Notification</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=munin&amp;f=3">(03) Set Thresholds</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=munin&amp;f=4">(04) Add Target Hosts</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=munin&amp;f=5">(05) Add Target Items</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sensu&amp;f=1">&nbsp; Sensu</a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sensu&amp;f=1">(01) Install Sensu</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sensu&amp;f=2">(02) Add Target Hosts#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sensu&amp;f=3">(03) Add Check Plugins#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sensu&amp;f=4">(04) Set Metric Collection Check</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sensu&amp;f=5">(05) Visualize with Grafana</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sensu&amp;f=6">(06) Add Check Plugins#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sensu&amp;f=7">(07) Add Check Plugins</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sensu&amp;f=8">(08) Add Check Plugins</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sensu&amp;f=9">(09) Add Check Plugins</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nagios&amp;f=1">&nbsp; Nagios</a>
+<ul style="position: absolute; margin-top: -3.75em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nagios&amp;f=1">(01) Install Nagios</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nagios&amp;f=2">(02) Notification Setting</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nagios&amp;f=3">(03) Set Thresholds</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nagios&amp;f=4">(04) Add Monitoring Target Item</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nagios&amp;f=5">(05) Add Monitoring Target Host#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nagios&amp;f=6">(06) Add Monitoring Target Host#2</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nagios&amp;f=7">(07) Add Monitoring Target Host#3</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sysstat&amp;f=1">&nbsp; SysStat</a>
+<ul style="position: absolute; margin-top: -0.0em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sysstat&amp;f=1">(01) Install SysStat</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sysstat&amp;f=2">(02) How to use</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix42&amp;f=1">&nbsp; Zabbix 4.2</a>
+<ul style="position: absolute; margin-top: -5.55em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix42&amp;f=1">(01) Install Zabbix 4.2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix42&amp;f=2">(02) Initial Setup</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix42&amp;f=3">(03) Change admin password</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix42&amp;f=4">(04) Set Monitoring Target</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix42&amp;f=5">(05) Set SMTP for Notifications</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix42&amp;f=6">(06) Notification email setting</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix42&amp;f=7">(07) Add Monitoring Target(CentOS)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix42&amp;f=8">(08) Add Monitoring Target(Win)</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix42&amp;f=9">(09) Add Monitoring Item</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix40&amp;f=1">&nbsp; Zabbix 4.0 LTS</a>
+<ul style="position: absolute; margin-top: -7.4em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix40&amp;f=1">(01) Install Zabbix 4.0 LTS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix40&amp;f=2">(02) Initial Setup</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix40&amp;f=3">(03) Change admin password</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix40&amp;f=4">(04) Set Monitoring Target</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix40&amp;f=5">(05) Set SMTP for Notifications</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix40&amp;f=6">(06) Notification email setting</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix40&amp;f=7">(07) Add Monitoring Target(CentOS)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix40&amp;f=8">(08) Add Monitoring Target(Win)</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix40&amp;f=9">(09) Add Monitoring Item</a></li>
+</ul>
+</li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix34&amp;f=1">&nbsp; Zabbix 3.4</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix32&amp;f=1">&nbsp; Zabbix 3.2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix30&amp;f=1">&nbsp; Zabbix 3.0 LTS</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zabbix&amp;f=1">&nbsp; Zabbix 2.4</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ssh">Lang / Development</a>
+<ul style="position: absolute; margin-top: -23.7em;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ruby22">&nbsp; Ruby</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ruby22">(01) Install Ruby 2.2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ruby23">(02) Install Ruby 2.3</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ruby24">(03) Install Ruby 2.4</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ruby25">(04) Install Ruby 2.5</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rails4">(05) Install Ruby on Rails 4</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rails5">(06) Install Ruby on Rails 5</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nodejs">&nbsp; JavaScript</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nodejs">(01) Install Node.js</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nodejs4">(02) Install Node.js 4</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nodejs6">(03) Install Node.js 6</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nodejs8">(04) Install Node.js 8</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=php56">&nbsp; PHP</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=php56">(01) Install PHP 5.6</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=php70">(02) Install PHP 7.0</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=php71">(03) Install PHP 7.1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=php72">(04) Install PHP 7.2</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=php73">(05) Install PHP 7.3</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=python33">&nbsp; Python</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=python33">(01) Install Python 3.3</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=python34">(02) Install Python 3.4</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=python35">(03) Install Python 3.5</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=python36">(04) Install Python 3.6</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=django">(05) Install Django</a></li>
+</ul>
+<ul style="position: absolute; margin-top: -23.7em; margin-left: 22.8em; border-left: #696969 1px dashed; z-index:70;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cuda&amp;f=1">&nbsp; CUDA</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cuda&amp;f=1">(01) Install CUDA 8.0</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cuda&amp;f=2">(02) Install CUDA 9.0</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cuda&amp;f=3">(03) Install CUDA 9.1</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=tensorflow&amp;f=1">&nbsp; TensorFlow</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=tensorflow&amp;f=1">(01) Install TensorFlow (CPU Only)</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=tensorflow&amp;f=2">(02) Install TensorFlow (with GPU)</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dotnet20">&nbsp; .NET Core</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=dotnet20">(01) Install .NET Core 2.0</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=scala">&nbsp; Scala</a></li>
+<li style="border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=scala">(01) Install Scala</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=jdk8&amp;f=1">&nbsp; Java</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=jdk8&amp;f=1">(01) Install JDK 8</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=jdk8&amp;f=2">(02) Install OpenJDK 8</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=jdk11&amp;f=1">(03) Install JDK 11</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=jdk11&amp;f=2">(04) Install OpenJDK 11</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=tomcat8">(05) Install Tomcat 8</a></li>
+<li style="border-bottom: #696969 0px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=tomcat9">(06) Install Tomcat 9</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=x&amp;f=1">Desktop Environment</a>
+<ul style="position: absolute; margin-top: -12.8em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=x&amp;f=5">(10) Connect to Windows with RDP</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=x&amp;f=10">(09) VNC Client : noVNC</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=x&amp;f=3">(08) VNC Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=x&amp;f=9">(07) Xrdp Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=x&amp;f=8">(06) Xfce Desktop</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=x&amp;f=7">(05) MATE Desktop</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=x&amp;f=6">(04) Cinnamon Desktop</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=x&amp;f=2">(03) KDE Desktop</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=x&amp;f=4">(02) Use GNOME Shell</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=x&amp;f=1">(01) GNOME Desktop</a></li>
+</ul>
+</li>
+<li class="tree"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=selinux&amp;f=1">Others #1</a>
+<ul style="position: absolute; margin-top: -27.4em;">
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zarafa&amp;f=1">Zarafa <span style="display:inline;position:absolute;left:95px;">- &nbsp; Groupware</span></a>
+<ul>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zarafa&amp;f=1">(01) Install Zarafa</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zarafa&amp;f=2">(02) Access to Web UI</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zimbra&amp;f=1">Zimbra <span style="display:inline;position:absolute;left:95px;">- &nbsp; Groupware</span></a>
+<ul>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zimbra&amp;f=1">(01) Install Zimbra</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=zimbra&amp;f=2">(02) Setup Zimbra</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=bacula&amp;f=1">Bacula <span style="display:inline;position:absolute;left:95px;">- &nbsp; Backup</span></a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=bacula&amp;f=1">(01) Configure Bacula Server#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=bacula&amp;f=2">(02) Configure Bacula Server#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=bacula&amp;f=3">(03) Configure Bacula Client</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=bacula&amp;f=4">(04) Backup Operation</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=bacula&amp;f=5">(05) Restore Operation</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=subversion&amp;f=1">Subversion <span style="display:inline;position:absolute;left:95px;">- &nbsp; Revision Control</span></a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=subversion&amp;f=1">(01) Install Subversion</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=subversion&amp;f=2">(02) Set Access Control</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=subversion&amp;f=3">(03) Windows Client</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=subversion&amp;f=4">(04) HTTP Access</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=gitolite3&amp;f=1">Gitolite3 <span style="display:inline;position:absolute;left:95px;">- &nbsp; Revision Control</span></a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=gitolite3&amp;f=1">(01) Install Gitolite</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=gitolite3&amp;f=2">(02) Add Users</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=gitolite3&amp;f=3">(03) Add Repositories</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=gitolite3&amp;f=4">(04) Set Access Control</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rabbitmq&amp;f=1">RabbitMQ <span style="display:inline;position:absolute;left:95px;">- &nbsp; Message Broker</span></a>
+<ul style="position: absolute; margin-top: -3.7em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rabbitmq&amp;f=1">(01) Install RabbitMQ</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rabbitmq&amp;f=2">(02) Use on Python</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rabbitmq&amp;f=3">(03) Use on PHP</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rabbitmq&amp;f=4">(04) Use on Ruby</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rabbitmq&amp;f=5">(05) Use Web UI</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rabbitmq&amp;f=6">(06) Use rabbitmqadmin</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rabbitmq&amp;f=7">(07) Configure Cluster</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=memcached&amp;f=1">Memcached <span style="display:inline;position:absolute;left:95px;">- &nbsp; Memory Cache</span></a>
+<ul style="position: absolute; margin-top: -3.7em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=memcached&amp;f=1">(01) Install Memcached</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=memcached&amp;f=2">(02) Basic Usage</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=memcached&amp;f=3">(03) Use it on Python</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=memcached&amp;f=4">(04) Use it on PHP</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=memcached&amp;f=5">(05) Use it on Node.js</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack7&amp;f=1">ElasticStack <span style="display:inline;position:absolute;left:95px;">- &nbsp; Search Engine++</span></a>
+<ul style="position: absolute; margin-top: -5.55em;">
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack&amp;f=1">ElasticStack 5</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack6&amp;f=1">ElasticStack 6</a></li>
+<li style="background: #e6e6fa; border-bottom: #696969 1px solid;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack7&amp;f=1">ElasticStack 7</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack7&amp;f=1">(01) Install Elasticsearch</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack7&amp;f=2">(02) Elasticsearch Cluster</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack7&amp;f=3">(03) Install Kibana</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack7&amp;f=4">(04) Install Logstash</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack7&amp;f=5">(05) Install Metricbeat</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack7&amp;f=6">(06) Install Packetbeat</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack7&amp;f=7">(07) Install Filebeat</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack7&amp;f=8">(08) Install Heartbeat</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack7&amp;f=9">(09) Install Auditbeat</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack7&amp;f=10">(10) Install Winlogbeat</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack7&amp;f=11">(11) Configure X-Pack.Monitoring</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=elasticstack7&amp;f=12">(12) Configure X-Pack.Security</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=func&amp;f=1">Func <span style="display:inline;position:absolute;left:95px;">- &nbsp; Remote Manage</span></a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=func&amp;f=1">(01) Install Func</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=func&amp;f=2">(02) Basic Operation</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=func&amp;f=3">(03) Use YumModule</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=func&amp;f=4">(04) Use CopyFileModule</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=func&amp;f=5">(05) Use CommandModule</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=salt&amp;f=1">Salt <span style="display:inline;position:absolute;left:95px;">- &nbsp; Config Manage</span></a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=salt&amp;f=1">(01) Install Salt</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=salt&amp;f=2">(02) Salt Basic Usage</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=salt&amp;f=3">(03) Use Salt State File#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=salt&amp;f=4">(04) Use Salt State File#2</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=salt&amp;f=5">(05) Use Salt-cp</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=puppet&amp;f=1">Puppet <span style="display:inline;position:absolute;left:95px;">- &nbsp; Config Manage</span></a>
+<ul style="position: absolute; margin-top: -3.7em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=puppet&amp;f=1">(01) Install Puppet</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=puppet&amp;f=2">(02) file Resource</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=puppet&amp;f=3">(03) package Resource</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=puppet&amp;f=4">(04) service Resource</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=puppet&amp;f=5">(05) group Resource</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=puppet&amp;f=6">(06) user Resource</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=puppet&amp;f=7">(07) exec Resource</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=puppet&amp;f=8">(08) node Section</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=puppet&amp;f=9">(09) class Section</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=puppet&amp;f=10">(10) facter Variable</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ansible&amp;f=1">Ansible <span style="display:inline;position:absolute;left:95px;">- &nbsp; Config Manage</span></a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ansible&amp;f=1">(01) Install Ansible</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ansible&amp;f=2">(02) Basic Usage</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ansible&amp;f=3">(03) Use Playbook#1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ansible&amp;f=4">(04) Use Playbook#2</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ansible&amp;f=5">(05) Use Playbook#3</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ansible&amp;f=6">(06) Use Playbook#4</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ansible&amp;f=7">(07) Use Playbook#5</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ansible&amp;f=8">(08) Use Playbook#6</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=spacewalk&amp;f=1">Spacewalk <span style="display:inline;position:absolute;left:95px;">- &nbsp; System Manage</span></a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=spacewalk&amp;f=1">(01) Install Spacewalk</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=spacewalk&amp;f=2">(02) Initial Settings</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=spacewalk&amp;f=3">(03) Clients' Settings</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pacemaker&amp;f=1">Pacemaker <span style="display:inline;position:absolute;left:95px;">- &nbsp; HA Cluster</span></a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pacemaker&amp;f=1">(01) Install Pacemaker</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pacemaker&amp;f=2">(02) Add Resource (httpd)</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pacemaker&amp;f=3">(03) CLVM + GFS2</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pxe&amp;f=1">PXE Boot<span style="display:inline;position:absolute;left:95px;">- &nbsp; PXE Server</span></a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pxe&amp;f=1">(01) Configure PXE Server</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pxe&amp;f=2">(02) Network Install</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pxe&amp;f=3">(03) Kickstart Install</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pxe&amp;f=4">(04) Diskless Client</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openvpn&amp;f=1">OpenVPN <span style="display:inline;position:absolute;left:95px;">- &nbsp; VPN Server</span></a>
+<ul>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openvpn&amp;f=1">(01) Configure VPN Server</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=openvpn&amp;f=2">(02) Configure VPN Client</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=lvm&amp;f=1">LVM <span style="display:inline;position:absolute;left:95px;">- &nbsp; LVM Manage</span></a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=lvm&amp;f=1">(01) Manage Phisical Volumes</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=lvm&amp;f=2">(02) Manage Volume Groups</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=lvm&amp;f=3">(03) Manage Logical Volumes</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=lvm&amp;f=4">(04) Create Mirroring Volume</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=lvm&amp;f=5">(05) Create Striped Volume</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rsyslog&amp;f=1">Rsyslog <span style="display:inline;position:absolute;left:95px;">- &nbsp; Syslog Server</span></a>
+<ul style="position: absolute; margin-top: -0.1em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rsyslog&amp;f=1">(01) Output Logs to Remote Host</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rsyslog&amp;f=2">(02) Output Logs to Database</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cgroups&amp;f=1">Cgroups <span style="display:inline;position:absolute;left:95px;">- &nbsp; Resource Control</span></a>
+<ul style="position: absolute; margin-top: -1.9em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cgroups&amp;f=1">(01) Install Cgroups</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cgroups&amp;f=2">(02) Create Control Groups</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cgroups&amp;f=3">(03) Configure Rules</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=audit&amp;f=1">Auditd <span style="display:inline;position:absolute;left:95px;">- &nbsp; System Audit</span></a>
+<ul style="position: absolute; margin-top: -5.6em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=audit&amp;f=1">(01) Install Auditd</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=audit&amp;f=2">(02) Output Logs to Remote Host</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=audit&amp;f=3">(03) Search Logs with ausearch</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=audit&amp;f=4">(04) Display Logs with aureport</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=audit&amp;f=5">(05) Add Audit Rules</a></li>
+</ul>
+</li>
+<li class="tree2"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=selinux&amp;f=1">SELinux <span style="display:inline;position:absolute;left:95px;">- &nbsp; Access Control</span></a>
+<ul style="position: absolute; margin-top: -16.45em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=selinux&amp;f=1">(01) SELinux Operating Mode</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=selinux&amp;f=2">(02) SELinux Policy Type</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=selinux&amp;f=3">(03) SELinux Context</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=selinux&amp;f=4">(04) Change Boolean Values</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=selinux&amp;f=5">(05) Change File Types</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=selinux&amp;f=6">(06) Change Port Types</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=selinux&amp;f=7">(07) Search Logs</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=selinux&amp;f=8">(08) Use SETroubleShoot</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=selinux&amp;f=9">(09) Use audit2allow</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=selinux&amp;f=10">(10) Use matchpathcon</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=selinux&amp;f=11">(11) Use sesearch</a></li>
+</ul>
+</li>
+<li class="tree2" style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=firewalld&amp;f=1">Firewalld <span style="display:inline;position:absolute;left:95px;">- &nbsp; Packet Filter</span></a>
+<ul style="position: absolute; margin-top: -1.8em;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=firewalld&amp;f=1">(01) Basic Operation</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=firewalld&amp;f=2">(02) IP Masquerade</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="other"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=hostname">Others #2</a>
+<ul style="position: absolute; margin-top: -29.2em; margin-left: 22.8em; border-left: #696969 1px dashed; z-index:60;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=nvidia">Install NVIDIA Graphic Driver</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=localrepo">Configure Local Yum Mirror</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=iperf3">Check Network Bandwidth</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=sshfs">Mount with SSHFS</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=lshw">Display Hardware Info</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=raid1">Configure RAID 1</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=quota">Set Disk Quota</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=hdparm">Display HDD Info</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=add_hd">Add Hard Drive</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ssl&amp;f=1">Create SSL Certificates (Self Sign)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ssl&amp;f=2">Get SSL Certificates (Let's Encrypt)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=resetpass">Reset root Password</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=psacct">Monitor User Activity</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=pam_tally">Count attempted Accesses</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=runlevel">Change RunLevel</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=timezone">Set Timezone</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=keymap">Set Keymap</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=locale">Set System Language</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=password">Set Password Rules</a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=hostname">Set Hostname</a></li>
+</ul>
+<ul style="position: absolute; margin-top: -29.2em; z-index:55;">
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=grafana">Grafana <span style="display:inline;position:absolute;left:90px;">- &nbsp; Web Dashboard</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=graphite">Graphite <span style="display:inline;position:absolute;left:90px;">- &nbsp; Graph System</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=virtualmin">Virtualmin <span style="display:inline;position:absolute;left:90px;">- &nbsp; System Manage</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=usermin">Usermin <span style="display:inline;position:absolute;left:90px;">- &nbsp; System Manage</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=webmin">Webmin <span style="display:inline;position:absolute;left:90px;">- &nbsp; System Manage</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=ajenti">Ajenti <span style="display:inline;position:absolute;left:90px;">- &nbsp; System Manage</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cockpit">Cockpit <span style="display:inline;position:absolute;left:90px;">- &nbsp; System Manage</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=jenkins">Jenkins <span style="display:inline;position:absolute;left:90px;">- &nbsp; Continuous Delivery</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=redmine">Redmine <span style="display:inline;position:absolute;left:90px;">- &nbsp; Project Manage</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=gitlab">GitLab <span style="display:inline;position:absolute;left:90px;">- &nbsp; Project Manage</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=hadoop">Hadoop <span style="display:inline;position:absolute;left:90px;">- &nbsp; Distributed File Sys</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=powershell">PowerShell <span style="display:inline;position:absolute;left:90px;">- &nbsp; CommandLine Shell</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=lynis">Lynis <span style="display:inline;position:absolute;left:90px;">- &nbsp; Security Audit</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=tripwire">Tripwire <span style="display:inline;position:absolute;left:90px;">- &nbsp; Host Based IDS</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=aide">AIDE <span style="display:inline;position:absolute;left:90px;">- &nbsp; Host Based IDS</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rkhunter">RKHunter <span style="display:inline;position:absolute;left:90px;">- &nbsp; Detect Rootkit</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=lsync">Lsync <span style="display:inline;position:absolute;left:90px;">- &nbsp; File Sync</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=rsync">Rsync <span style="display:inline;position:absolute;left:90px;">- &nbsp; File Sync</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=tcp_wrapper">TCP Wrapp <span style="display:inline;position:absolute;left:90px;">- &nbsp; Access Controls</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=acl">ACL <span style="display:inline;position:absolute;left:90px;">- &nbsp; Access Controls</span></a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=realmd">Realmd <span style="display:inline;position:absolute;left:90px;">- &nbsp; Join in AD Domain</span></a></li>
+<li style="border-bottom: 0px"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=clamav">Clamav <span style="display:inline;position:absolute;left:90px;">- &nbsp; AntiVirus</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div style="display: inline-block; width: 100%; font-size: 12px; text-align: center; background-color: #e6e6fa; border-bottom: 1px solid #696969; border-top: 2px solid #e6e6fa;">Sponsored Link</div>
+<div id="bann">
+<script async="" src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/f(1).txt"></script>
+<!-- 160x600 -->
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-6423793798099903" data-ad-slot="6315121180" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent;"><iframe width="160" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:160px;height:600px;" src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/saved_resource.html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div id="contents">
+<br>
+<table style="width: 96%; line-height: 1.5; margin-top: 5px; margin-bottom: 10px; margin-left: auto; margin-right: auto;" summary="subject">
+<tbody><tr>
+<td style="width: 100%; height: 28px; color: #ff3399; padding-left: 50px; background: url(./img/icon.gif) #ffffff no-repeat 0 0;">
+<div class="subject">Apache httpd : Install httpd<div class="date">2014/07/18</div></div>
+</td>
+</tr>
+</tbody></table>
+<table class="base" summary="1">
+<tbody><tr>
+<td class="num">&nbsp;</td>
+<td>
+<div class="block">
+Install httpd to configure Web Server. HTTP uses 80/TCP.
+</div>
+</td>
+</tr>
+<tr>
+<td class="num">[1]</td>
+<td>Install httpd.
+</td>
+</tr>
+</tbody></table>
+<table class="term" summary="1-1">
+<tbody><tr>
+<td>
+<div class="block">
+[root@www ~]# <div class="color1"><a href="https://www.server-world.info/en/command/html/yum.html" onclick="return hs.htmlExpand(this, { objectType: &#39;iframe&#39; } )" onkeypress="">yum</a> -y install httpd </div></div>
+<div class="color2"># remove welcome page</div><br>
+[root@www ~]# <div class="color1"><a href="https://www.server-world.info/en/command/html/rm.html" onclick="return hs.htmlExpand(this, { objectType: &#39;iframe&#39; } )" onkeypress="">rm</a> -f /etc/httpd/conf.d/welcome.conf</div><br>
+</td>
+</tr>
+</tbody></table>
+<table class="base" summary="2">
+<tbody><tr>
+<td class="num">[2]</td>
+<td>Configure httpd. Replace server name to your own environment.
+</td>
+</tr>
+</tbody></table>
+<table class="term" summary="2-1">
+<tbody><tr>
+<td>
+<div class="block">
+[root@www ~]# <div class="color1"><a href="https://www.server-world.info/en/command/html/vi.html" onclick="return hs.htmlExpand(this, { objectType: &#39;iframe&#39; } )" onkeypress="">vi</a> /etc/httpd/conf/httpd.conf </div></div>
+<div class="block">
+<div class="color2"># line 86: change to admin's email address</div><br>
+ServerAdmin <div class="color1">root@srv.world</div>
+</div>
+<div class="block">
+<div class="color2"># line 95: change to your server's name</div><br>
+ServerName <div class="color1">www.srv.world:80</div>
+</div>
+<div class="block">
+<div class="color2"># line 151: change</div><br>
+AllowOverride <div class="color1">All</div>
+</div>
+<div class="block">
+<div class="color2"># line 164: add file name that it can access only with directory's name</div><br>
+DirectoryIndex index.html <div class="color1">index.cgi index.php</div>
+</div>
+<div class="color2"># add follows to the end</div><br>
+<div class="color1">
+<div class="block">
+<div class="color2"># server's response header</div><br>
+ServerTokens Prod
+</div>
+<div class="block">
+<div class="color2"># keepalive is ON</div><br>
+KeepAlive On
+</div>
+</div>
+[root@www ~]# <div class="color1"><a href="https://www.server-world.info/en/command/html/systemctl.html" onclick="return hs.htmlExpand(this, { objectType: &#39;iframe&#39; } )" onkeypress="">systemctl</a> start httpd </div><br>
+[root@www ~]# <div class="color1"><a href="https://www.server-world.info/en/command/html/systemctl.html" onclick="return hs.htmlExpand(this, { objectType: &#39;iframe&#39; } )" onkeypress="">systemctl</a> enable httpd </div><br>
+</td>
+</tr>
+</tbody></table>
+<table class="base" summary="3">
+<tbody><tr>
+<td class="num">[3]</td>
+<td><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=firewalld">If Firewalld is running</a>, allow HTTP service. HTTP uses 80/TCP.
+</td>
+</tr>
+</tbody></table>
+<table class="term" summary="3-1">
+<tbody><tr>
+<td>
+[root@www ~]# <div class="color1">firewall-cmd --add-service=http --permanent </div><br>
+success<br>
+[root@www ~]# <div class="color1">firewall-cmd --reload </div><br>
+success
+</td>
+</tr>
+</tbody></table>
+<table class="base" summary="4">
+<tbody><tr>
+<td class="num">[4]</td>
+<td>Create a HTML test page and access to it from client PC with web browser. It's OK if following page is shown. 
+</td>
+</tr>
+</tbody></table>
+<table class="term" summary="4-1">
+<tbody><tr>
+<td>
+<div class="block">
+[root@www ~]# <div class="color1"><a href="https://www.server-world.info/en/command/html/vi.html" onclick="return hs.htmlExpand(this, { objectType: &#39;iframe&#39; } )" onkeypress="">vi</a> /var/www/html/index.html </div></div>
+<div class="color1">
+<pre style="font-family: Consolas, Courier, Monaco, monospace;">&lt;html&gt;
+&lt;body&gt;
+&lt;div style="width: 100%; font-size: 40px; font-weight: bold; text-align: center;"&gt;
+Test Page
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</td>
+</tr>
+</tbody></table>
+<table class="base_win" summary="4-2">
+<tbody><tr>
+<td>
+<img src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/1.png" width="800" height="267" alt="" class="img" style="max-width: 800px; width: 100%; height: auto;">
+</td>
+</tr>
+</tbody></table>
+<div style="width: 100%; border-top: 1px #696969 solid; margin-left: auto; margin-right: auto; text-align:center; background-color: #e6e6fa; letter-spacing: 10px;">Matched Content</div>
+<div style="width: 100%; border-top: 1px #696969 solid; padding-top: 10px; padding-bottom: 35px;">
+<div style="width: 98%; margin-left: auto; margin-right: auto; text-align:center;">
+<script async="" src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/f(1).txt"></script>
+<ins class="adsbygoogle" style="display: block; height: 382px;" data-ad-format="autorelaxed" data-ad-client="ca-pub-6423793798099903" data-ad-slot="9863218866" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:382px;margin:0;padding:0;position:relative;visibility:visible;width:638px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:382px;margin:0;padding:0;position:relative;visibility:visible;width:638px;background-color:transparent;"><iframe width="638" height="382" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0px;width:638px;height:382px;" src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/saved_resource(1).html"></iframe></ins></ins></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+</div>
+<div id="right">
+<div class="os" style="overflow: hidden;">CentOS 7 : Apache httpd</div>
+<div class="navi2">
+<ul>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=1">(01) Install httpd</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=2">(02) Use Perl Scripts</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=3">(03) Use PHP Scripts</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=4">(04) Use Rub Scriptsy</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=17">(05) Use Python Scripts</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=5">(06) Enable Userdir</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=6">(07) Virtual Hostings</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=7">(08) Configure SSL/TLS Setting</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=8">(09) Basic Authentication</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=10">(10) Basic Authentication + PAM</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=11">(11) Basic Authentication + LDAP</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=9">(12) Kerberos Authentication</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=12">(13) Use WebDAV</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=18">(14) Perl + mod_perl</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=19">(15) PHP + PHP-FPM</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=20">(16) Python + mod_wsgi</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=21">(17) Install SquirrelMail (WebMail)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=13">(18) Install RoundCube (WebMail)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=14">(19) Install RainLoop (WebMail)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=15">(20) Install AWstats (Log Report)</a></li>
+<li><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd&amp;f=16">(21) Install PiwikLog (Log Report)</a></li>
+<li style="border-bottom: #696969 1px solid; text-align: center;"><a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=httpd2&amp;f=1">[ Next Page ]</a></li>
+</ul>
+</div>
+<div style="width: 100%; text-align: center;">
+<div style="display: inline-block; width: 100%; font-size: 12px; text-align: center; background-color: #e6e6fa; border-bottom: 1px solid #696969; border-top: 2px solid #e6e6fa;">Sponsored Link</div>
+<script async="" src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/f(1).txt"></script>
+<!-- 300x600 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-6423793798099903" data-ad-slot="2551543351" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0px;width:300px;height:600px;" src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/saved_resource(2).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div><iframe id="google_osd_static_frame_1854549509577" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/saved_resource(3).html"></iframe>
+<div id="footer">Copyright © 2007-2019 Server World All Rights Reserved.
+<script type="text/javascript" src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/count.js.download"></script><img src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/access.cgi" width="1" height="1" alt="">
+<img src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/count.cgi" width="1" height="1" alt="">
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/ga.js.download" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11962766-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_3_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0px;width:0px;height:0px;" src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/saved_resource(4).html"></iframe></ins></ins></ins><div class="highslide-container" style="padding: 0px; border: none; margin: 0px; position: absolute; left: 0px; top: 0px; width: 100%; z-index: 1001; direction: ltr;"><a class="highslide-loading" title="Click to cancel" href="javascript:;" style="position: absolute; top: -9999px; opacity: 0.75; z-index: 1;">Loading...</a><div style="display: none;"></div><table cellspacing="0" style="padding: 0px; border: none; margin: 0px; visibility: hidden; position: absolute; border-collapse: collapse; width: 0px;"><tbody style="padding: 0px; border: none; margin: 0px;"><tr style="padding: 0px; border: none; margin: 0px; height: auto;"><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background: url(&quot;https://www.server-world.info/en/command/graphics/outlines/rounded-white.png&quot;) 0px 0px; height: 20px; width: 20px;"></td><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background: url(&quot;https://www.server-world.info/en/command/graphics/outlines/rounded-white.png&quot;) 0px -40px; height: 20px; width: 20px;"></td><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background: url(&quot;https://www.server-world.info/en/command/graphics/outlines/rounded-white.png&quot;) -20px 0px; height: 20px; width: 20px;"></td></tr><tr style="padding: 0px; border: none; margin: 0px; height: auto;"><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background: url(&quot;https://www.server-world.info/en/command/graphics/outlines/rounded-white.png&quot;) 0px -80px; height: 20px; width: 20px;"></td><td class="rounded-white highslide-outline" style="padding: 0px; border: none; margin: 0px; position: relative;"></td><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background: url(&quot;https://www.server-world.info/en/command/graphics/outlines/rounded-white.png&quot;) -20px -80px; height: 20px; width: 20px;"></td></tr><tr style="padding: 0px; border: none; margin: 0px; height: auto;"><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background: url(&quot;https://www.server-world.info/en/command/graphics/outlines/rounded-white.png&quot;) 0px -20px; height: 20px; width: 20px;"></td><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background: url(&quot;https://www.server-world.info/en/command/graphics/outlines/rounded-white.png&quot;) 0px -60px; height: 20px; width: 20px;"></td><td style="padding: 0px; border: none; margin: 0px; line-height: 0; font-size: 0px; background: url(&quot;https://www.server-world.info/en/command/graphics/outlines/rounded-white.png&quot;) -20px -20px; height: 20px; width: 20px;"></td></tr></tbody></table></div></body><iframe id="google_shimpl" style="display: none;" src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/saved_resource(5).html"></iframe><iframe id="google_esf" name="google_esf" src="./CentOS 7 _ Apache httpd _ Install _ Server World_files/zrt_lookup.html" data-ad-client="ca-pub-6423793798099903" style="display: none;"></iframe></html>
